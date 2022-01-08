@@ -9,7 +9,7 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended that you check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.puts 'Establishing connection to database ...'
 
 ActiveRecord::Schema.define(version: 20160625062916) do
 
