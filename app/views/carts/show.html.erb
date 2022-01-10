@@ -6,19 +6,11 @@
   <% if enhanced_cart.length() == 0 %>
   
     <div class="panel panel-default items">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th>Your cart is empty! Please return to Jungle and add items to your cart. Thank you!</th>
-          </tr>
-        </thead>
-        <tbody>
-        <td>
-         <%= link_to products_url, class: 'btn btn-xs btn-success' do %>   Return Home and shop on  <% end %>
-        </td>
-        </tbody>
+      <table class="table table-bordered">       
+        <th>Your cart is empty! Please return to Jungle and add items to your cart. Thank you!</th>
       </table>
     </div>
+    <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
   
   <% else %>
   

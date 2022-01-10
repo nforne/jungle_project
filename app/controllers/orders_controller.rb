@@ -1,8 +1,14 @@
 class OrdersController < ApplicationController
-
+  
   def show
     @order = Order.find(params[:id])
   end
+
+  def enhanced_order
+    @@enhanced_order += enhanced_cart
+    return @@enhanced_order
+  end
+  helper_method :enhanced_order
 
   def create
     charge = perform_stripe_charge
@@ -42,7 +48,7 @@ class OrdersController < ApplicationController
       stripe_charge_id: stripe_charge.id, # returned by stripe
     )
 
-    enhanced_cart.each do |entry|
+    enhanced_order.each do |entry|
       product = entry[:product]
       quantity = entry[:quantity]
       order.line_items.new(
