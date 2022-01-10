@@ -1,6 +1,7 @@
 class CartsController < ApplicationController
   
   def show
+    @@enhanced_order.clear
   end
 
   def add_item
