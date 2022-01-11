@@ -15,3 +15,14 @@ body {
 form.button_to {
   display: inline;
 }
+
+//forms class
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-self: center;
+  align-items: inline;
+  align-content: space-between;
+  width: 40%;
+}

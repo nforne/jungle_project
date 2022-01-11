@@ -1,0 +1,11 @@
+<div class:"forms">
+  <%= form_tag sessions_path do %>
+    <%= label_tag "email" %>
+    <%= text_field_tag :email, nil, placeholder: "email" %>
+    <br>
+    <%= label_tag "Password" %>
+    <%= password_field_tag :password, nil, placeholder: "Password" %>
+    <br>
+    <%= submit_tag "Log In", class: 'btn btn-lg btn-primary'%>
+  <% end %>
+</div>

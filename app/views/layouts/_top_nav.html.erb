@@ -43,11 +43,29 @@
           </ul>
         </li>
         <li>
+        
+                
+        <% if logged_in? %>
           <%= link_to cart_path do %>
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
+            <% end %>
+          </li>
+          <li>
+            <%= link_to "Signed_in as: #{ User.find(session[:user_id])[:email] }" %>
+          </li>
+          <li>
+            <%= button_to "Logout", sessions_path, method: :delete, class: 'btn btn-lg btn-primary' %>
+          </li>
+        <% else %>
+            <li>
+              <%= button_to "Login", login_path, method: :get , class: 'btn btn-lg btn-primary' %>
+            </li>
           <% end %>
+        <li>||</li>
+        <li>
+          <%= button_to "Sign-Up", signup_path, method: :get , class: 'btn btn-lg btn-primary' %>
         </li>
-      </ul>
+    </ul>
     </div>
   </div>
 </nav>
