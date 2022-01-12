@@ -44,12 +44,12 @@
         </li>
         <li>
         
+        <%= link_to cart_path do %>
+          <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
+          <% end %>
+        </li>
                 
         <% if logged_in? %>
-          <%= link_to cart_path do %>
-            <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
-            <% end %>
-          </li>
           <li>
             <%= link_to "Signed_in as: #{ User.find(session[:user_id])[:email] }" %>
           </li>

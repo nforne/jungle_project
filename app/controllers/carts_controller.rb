@@ -5,14 +5,16 @@ class CartsController < ApplicationController
   end
 
   def add_item
-    if logged_in?
-      product_id = params[:product_id].to_s
-      modify_cart_delta(product_id, +1)
-      redirect_to :back
-    else
-      flash[:notice] = "Create an account (Sign-Up) or Login to add items to your cart. Thank you and happy shopping!"
-      redirect_to :back
-    end
+    product_id = params[:product_id].to_s
+    modify_cart_delta(product_id, +1)
+    redirect_to :back
+    
+    # if logged_in?
+
+    # else
+    #   flash[:notice] = "Create an account (Sign-Up) or Login to add items to your cart. Thank you and happy shopping!"
+    #   redirect_to :back
+    # end
   end
 
   def remove_item
