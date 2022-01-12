@@ -7,14 +7,11 @@ class UsersController < ApplicationController
     @user = User.create(user_params)
     if @user.valid?
       @user.save
-      redirect_to sessions_path
-    else  
+      session[:user_id] = User.find_by(email: user_params[:email]).id
       redirect_to root_path
+    else
+      flash[:notice] = "Oop! Enter all ditails properly to continue. Thank you!"
     end
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
   private

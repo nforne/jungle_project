@@ -1,5 +1,17 @@
 class User < ActiveRecord::Base
   has_secure_password
   validates :username, presence: true, uniqueness: true
-  validates :password, presence: true
+  validates :email, presence: true, uniqueness: {case_sensitive: false}
+  validates :password, presence: true, confirmation: true, length: {minimum: 4}
+
+  def self.authenticate_with_credentials(email, password)
+    auth = User.find_by(email: email)&.authenticate(password)
+    if auth
+      @user = User.find_by(email: email)
+      return @user
+    else
+      return nil
+    end
+  end
+
 end
