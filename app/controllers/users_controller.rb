@@ -10,7 +10,8 @@ class UsersController < ApplicationController
       session[:user_id] = User.find_by(email: user_params[:email]).id
       redirect_to root_path
     else
-      flash[:notice] = "Oop! Enter all ditails properly to continue. Thank you!"
+      flash[:notice] = "Oop! Enter all ditails correctly to continue. Thank you!"
+      redirect_to :back
     end
   end
 
