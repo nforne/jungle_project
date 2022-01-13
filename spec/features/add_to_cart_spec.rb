@@ -1,12 +1,7 @@
-# require 'rails_helper'
-
-# RSpec.feature "AddToCarts", type: :feature do
-#   pending "add some scenarios (or delete) #{__FILE__}"
-# end
 
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to product detail page", type: :feature, js: true do
+RSpec.feature "Visitor AddToCarts", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -32,9 +27,6 @@ RSpec.feature "Visitor navigates to product detail page", type: :feature, js: tr
 
     # DEBUG / VERIFY
     save_screenshot
-
-    # commented out b/c it's for debugging only
-    # save_and_open_screenshot
 
     within('body') { expect(page).to have_content('My Cart (1)'), count: 1 }
   end

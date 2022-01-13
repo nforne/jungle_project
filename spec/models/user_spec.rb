@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  # pending "add some examples to (or delete) #{__FILE__}"
-
+  
   subject { described_class.new(
     username: "Anything",
     email: "a@b.com",
@@ -10,7 +9,6 @@ RSpec.describe User, type: :model do
   )}
 
   describe 'Validations' do
-    # validation tests/examples here
 
     it "is valid with valid attributes" do
       expect(subject).to be_valid
@@ -38,8 +36,7 @@ RSpec.describe User, type: :model do
   end
 
   describe '.authenticate_with_credentials' do
-    # examples for this class method here
-    
+        
     it "should authenticate with credentials" do
       user = User.authenticate_with_credentials(subject.email, subject.password)
       expect(user).to eq(User.find_by(email: subject.email))

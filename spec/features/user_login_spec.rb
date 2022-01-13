@@ -1,12 +1,7 @@
-# require 'rails_helper'
-
-# RSpec.feature "UserLogins", type: :feature do
-#   pending "add some scenarios (or delete) #{__FILE__}"
-# end
 
 require 'rails_helper'
 
-RSpec.feature "Visitor navigates to product detail page", type: :feature, js: true do
+RSpec.feature "Visitor UserLogins", type: :feature, js: true do
 
   # SETUP
   before :each do
@@ -42,12 +37,12 @@ RSpec.feature "Visitor navigates to product detail page", type: :feature, js: tr
 
     # DEBUG / VERIFY
     save_screenshot
-    # commented out b/c it's for debugging only
-    # save_and_open_screenshot
+
     within('body') { expect(page).to have_content('a@b.com')}
     click_on 'Logout'
 
     #  login
+    # ACT
     go_forward
     click_on 'Login'
     fill_in 'Email', with: email
@@ -57,8 +52,7 @@ RSpec.feature "Visitor navigates to product detail page", type: :feature, js: tr
 
     # DEBUG / VERIFY
     save_screenshot
-    # commented out b/c it's for debugging only
-    # save_and_open_screenshot
+    
     within('body') { expect(page).to have_content('a@b.com')}
     click_on 'Logout'
     visit root_path

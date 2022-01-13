@@ -1,8 +1,3 @@
-# require 'rails_helper'
-
-# RSpec.feature "ProductDetails", type: :feature do
-#   pending "add some scenarios (or delete) #{__FILE__}"
-# end
 
 require 'rails_helper'
 
@@ -31,9 +26,6 @@ RSpec.feature "Visitor navigates to product detail page", type: :feature, js: tr
 
     # DEBUG / VERIFY
     save_screenshot
-
-    # commented out b/c it's for debugging only
-    # save_and_open_screenshot
 
     expect(page).to have_css 'article.product-detail', count: 1
   end
