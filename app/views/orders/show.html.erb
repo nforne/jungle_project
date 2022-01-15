@@ -5,7 +5,12 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>---|@| <%= @order.email %> |@|---  Thank you for your order! </h4>
+    <h4> Thank you for your order! </h4>
+    <ul>
+        <li><strong>Order Number:</strong> <%= @order.id %></li>
+        <li><strong>Time and Date:</strong> <%= @order.created_at %></li>
+        <li><strong>email:</strong> <%= @order.email %></li>
+      </ul>
   </div>
 
   <div class="panel panel-default items">
